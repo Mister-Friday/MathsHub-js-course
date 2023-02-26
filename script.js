@@ -228,20 +228,11 @@ for (let i = 0; i < choosedEl.length; i++) {
 // console.log("3")
 
 const postBlock = document.querySelector(".posts_block_conteiner")
+const showPostBtn = document.querySelector(".posts_block button")
+
 
 const func = () => 5
 
-fetch("https://jsonplaceholder.typicode.com/posts")
-    .then(res => res.json())
-    // console.log(res)
-    .then(data => {
-        for (item of data) {
-            addPost(item.title, item.body)
-        }
-        // addPost(data[7].title, data[7].body)
-        // console.log(data)
-    })
-    .catch(err => console.log(err.message))
 function addPost(title, body) {
     const postTitle = document.createElement("h3")
     const postBody = document.createElement("span")
@@ -255,3 +246,38 @@ function addPost(title, body) {
 }
 
 
+function getPost() {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+        .then(res => res.json())
+        // console.log(res)
+        .then(data => {
+            for (item of data) {
+                addPost(item.title, item.body)
+            }
+            // addPost(data[7].title, data[7].body)
+            // console.log(data)
+        })
+        .catch(err => console.log(err.message))
+}
+showPostBtn.onclick = () => {getPost()}
+
+// function createPost(title, body, userId) {
+//     fetch('https://jsonplaceholder.typicode.com/posts', {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             //   title: title,
+//             //   body: body,
+//             //   userId: userId,
+//             title,
+//             body,
+//             userId,
+//         }),
+//         headers: {
+//             'Content-type': 'application/json; charset=UTF-8',
+//         },
+//     })
+//         .then(res => {
+//             console.log(res)
+//         })
+// }
+// createPost("title", "body", 15)
