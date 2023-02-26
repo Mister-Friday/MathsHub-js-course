@@ -197,3 +197,61 @@ for (let i = 0; i < choosedEl.length; i++) {
 //         }
 //     })
 // }
+
+// const timeIsOver = () => {
+// alert("Время вышло!")
+// }
+// setTimeout (timeIsOver ,2000)
+
+// const timeIsOver = () => {
+//     alert ("Время вышло!")
+// }
+
+// const alarm = setInterval(timeIsOver, 3000)
+
+
+// const alarm = setInterval(() => {
+//     let wantToSleep = confirm ("Пора спать")
+//     if(wantToSleep) {
+//         console.log("tic")
+//     }else  {
+//         clearInterval(alarm)
+//     }
+// }, 3000)
+// clearInterval(alarm)
+
+// console.log("1")
+// setTimeout (() => {
+//     console.log("2")
+
+// },0)
+// console.log("3")
+
+const postBlock = document.querySelector(".posts_block_conteiner")
+
+const func = () => 5
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(res => res.json())
+    // console.log(res)
+    .then(data => {
+        for (item of data) {
+            addPost(item.title, item.body)
+        }
+        // addPost(data[7].title, data[7].body)
+        // console.log(data)
+    })
+    .catch(err => console.log(err.message))
+function addPost(title, body) {
+    const postTitle = document.createElement("h3")
+    const postBody = document.createElement("span")
+    const postItem = document.createElement("p")
+
+    postItem.append(postTitle, postBody)
+    postBlock.append(postItem)
+
+    postTitle.innerText = title
+    postBody.innerText = body
+}
+
+

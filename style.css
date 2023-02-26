@@ -118,7 +118,19 @@ background-color: dimgrey;
 .choosed_element {
 	border: 3px solid black;
 }
-
+.posts_block {
+max-width: 800px;
+margin: 20px auto ;
+}
+.posts_block h2 {
+text-align: center;
+}
+.posts_block_conteiner {
+	margin: 5px;
+	padding: 10px;
+	border-radius: 10px;
+	background-color:lightgray;
+}
 
 
 
