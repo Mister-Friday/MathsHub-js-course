@@ -15,27 +15,39 @@
 header {
 	background-color: #06C;
 	height: 50px;
+	width: 100%;
+	position: fixed;
+	top: 0;
 }
 
 nav {
 	/*border: 1px dotted black;*/
 	/*width: min-content;*/
 	height: inherit;
+	width: inherit;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 }
 
-nav>a {
+nav > a {
 	text-decoration: none;
 	color: #000;
 	/*padding: 15px;*/
 	font-size: 20px;
 }
 
+nav > a:hover {
+color: gold;
+}
+
+maim {
+	margin-top: 100px;
+}
 .about_us {
 	display: flex;
 	justify-content: center;
+	padding: 50px;
 	/*flex-direction: column;*/
 }
 
